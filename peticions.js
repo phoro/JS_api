@@ -12,10 +12,8 @@ let init = (function () {
 
 
 
-
-
 //Peticions encapsulades
-let peticio01 = function () {
+var peticio01 = ()=> {
     const API = encodeURI(" http://api.geonames.org/");
     const temps = "weatherJSON?";
     const user = "jsprovageo";
@@ -29,6 +27,11 @@ let peticio01 = function () {
     peticio.responseType = 'json';
     peticio.onload = processarResposta;
 
+    
+    var interna = ()=>{
+        alert("aquí tens la funció!");
+    }
+
     function processarResposta() {
         let resposta = peticio.response;
         console.log("resposta01 " + resposta);
@@ -37,6 +40,15 @@ let peticio01 = function () {
         imatge.src = null;
     }
 }
+
+//***************** proves d'accés *****************
+var demanarFuncioInterna = ()=>{peticio01.interna};
+
+demanarFuncioInterna();
+console.log(peticio01.interna);
+console.log(demanarFuncioInterna);
+
+//***************** proves d'accés *****************
 
 let tematica = function () {
     const API = encodeURI("https://servicios.ine.es/wstempus/js/ES/OPERACIONES_DISPONIBLES");
