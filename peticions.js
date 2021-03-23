@@ -19,7 +19,6 @@ let peticio01 = function () {
     const API = encodeURI(" http://api.geonames.org/");
     const temps = "weatherJSON?";
     const user = "jsprovageo";
-    const pass = "jslaltra";
     const idioma = "lang=es";
     const peticio = new XMLHttpRequest();
     const url = "http://api.geonames.org/findNearbyJSON?lat=41.3&lng=2.17&username=jsprovageo&lang=es";
