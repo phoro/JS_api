@@ -1,0 +1,71 @@
+body {
+    background-color: black;
+}
+
+button {
+    font-size: 15px;
+    height: 2em;
+    border-radius: .5em;
+    text-transform: uppercase;
+    border: none;
+    padding: .4em .6em;
+    text-align: center;
+    text-decoration: none;
+    background-color:#3493C7;
+    color: white;
+    box-shadow: 0 .5em 0.5em 0 rgba(0,0,0,0.2), 0 .5em 0.5em 0 rgba(0,0,0,0.19);
+    transition-duration: 0.4s;
+    float:left;
+    margin-right: 0.5em;
+    
+}
+button:hover {
+  background-color: #9DC9E0;
+  color: white;
+}
+
+#principal {
+    font-size: 15px;
+    margin-left: 25%;
+    padding: 1em 0em 1.5em 2em;
+    align-content: center;
+    background: #348AC7;
+    width: 50%;
+    border-radius: 1em;
+    color: white;
+    text-transform: uppercase;
+    
+}
+img {
+    border-style: solid;
+    border-color: black;
+}
+
+#botons {
+    padding: 1em;
+    padding-bottom: 1em;
+}
+select{
+    font-size: 15px;
+    height: 2em;
+    border-radius: .5em;
+    text-transform: uppercase;
+    border: none;
+    padding: .4em .6em;
+    text-align: left;
+    text-decoration: none;
+    background-color:white;
+    color: black;
+    width: 70%;
+    box-shadow: 0 .3em 0.3em 0 rgba(0,0,0,0.1), 0 .3em 0.3em 0 rgba(0,0,0,0.19);
+    transition-duration: 0.4s;
+    font-family: Arial;
+    
+    
+    
+}
+#desplegable{
+    clear: both;
+    padding-top: 1em;
+    
+}
