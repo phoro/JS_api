@@ -3,29 +3,24 @@
 
 <head>
   <meta charset="utf-8">
-
   <script src="peticions.js" defer>  </script>
   <link rel="stylesheet" href="estil.css" />
-
 </head>
 
 <body>
   <div id="esquerra" class="esquerra">
     <ul id="barra_botons" >
-      <li><button onclick="tematica()">Temáticas</button></li>
-      <li><button onclick=" demanarFuncioInterna()">prova2</button></li>
-      <li><button onclick="peticio01().tercerafuncio()">prova3</button></li>
+      <li><button onclick="programa().interna()">Temáticas</button></li>
+      <li><button onclick="programa().segonafuncio()">prova2</button></li>
+      <li><button onclick="programa().tercerafuncio()">prova3</button></li>
     </ul>
       
   </div>
   <div id="principal" class="principal">
     <h1 id="titol">Datos Gobierno de España</h1>
-    
     <div id="desplegable">
       <select id="seleccio" name="desplegable"></select>
     </div>
-    <p id="sortida"></p>
-
   </div>
 </body>
 
