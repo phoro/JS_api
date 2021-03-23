@@ -3,22 +3,14 @@ const imatge = document.getElementById("foto");
 const text = document.getElementById("sortida");
 const seleccio = document.getElementById("seleccio");
 
-
 //Funció que es crida a sí mateixa.
 // es pot fer servir per encapsular tot l'script
 let init = (function () {
     seleccio.hidden = true;
 })();
 
-
-
 //Peticions encapsulades
-var peticio01 = ()=> {
-    const API = encodeURI(" http://api.geonames.org/");
-    const temps = "weatherJSON?";
-    const user = "jsprovageo";
-    const pass = "jslaltra";
-    const idioma = "lang=es";
+var peticio01 = () => {
     const peticio = new XMLHttpRequest();
     const url = "http://api.geonames.org/findNearbyJSON?lat=41.3&lng=2.17&username=jsprovageo&lang=es";
 
@@ -27,22 +19,26 @@ var peticio01 = ()=> {
     peticio.responseType = 'json';
     peticio.onload = processarResposta;
 
-    
-    var interna = ()=>{
-        alert("aquí tens la funció!");
-    }
-
     function processarResposta() {
         let resposta = peticio.response;
         console.log("resposta01 " + resposta);
         let nom = resposta.geonames[0].name;
         sortida.innerHTML = nom;
-        imatge.src = null;
     }
+
+    return {
+        interna: function () {
+            return alert("aquí tens la funció!")
+        },
+        restart: function () {
+            gameEngine.restart();
+        }
+    }
+
 }
 
 //***************** proves d'accés *****************
-var demanarFuncioInterna = ()=>{peticio01.interna};
+var demanarFuncioInterna = () => { peticio01.interna };
 
 demanarFuncioInterna();
 console.log(peticio01.interna);
@@ -50,14 +46,13 @@ console.log(demanarFuncioInterna);
 
 //***************** proves d'accés *****************
 
-let tematica = function () {
+var tematica = function () {
     const API = encodeURI("https://servicios.ine.es/wstempus/js/ES/OPERACIONES_DISPONIBLES");
     const peticio = new XMLHttpRequest();
     peticio.open("GET", API, true);
     peticio.send(null);
     peticio.responseType = 'json';
     peticio.onload = processarResposta;//espera a obtenir la resposta abans de desar-la
-
 
     function processarResposta() {
         let resposta = peticio.response;
