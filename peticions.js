@@ -25,22 +25,25 @@ var peticio01 = () => {
         let nom = resposta.geonames[0].name;
         sortida.innerHTML = nom;
     }
-
+    //funcions accessibles des de fora de l'encapsulament
     return {
         interna: function () {
             return alert("aquí tens la funció!")
         },
-        restart: function () {
-            gameEngine.restart();
+        segonafuncio: function () {
+            return alert("segona funció!");
+        },
+        tercerafuncio: function () {
+            return alert("tercera funció!");
         }
     }
 
 }
 
 //***************** proves d'accés *****************
-var demanarFuncioInterna = () => { peticio01.interna };
+var demanarFuncioInterna = () => { peticio01().segonafuncio() };
 
-demanarFuncioInterna();
+
 console.log(peticio01.interna);
 console.log(demanarFuncioInterna);
 
