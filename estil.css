@@ -61,6 +61,7 @@ select {
     float: left;
     margin: .5em 0.3em;
     padding: 1em;
+     border-radius:0.2em;
 }
 
 .esquerra {
@@ -69,8 +70,8 @@ select {
     background-color: #348AC7;
     width: 20%;
     float: left;
+     border-radius:0.2em;
 }
-
 
 #desplegable {
     clear: both;
