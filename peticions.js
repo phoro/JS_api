@@ -1,41 +1,25 @@
-
+/*
+ * Programa encapsulat
+ * Cada crida a una funció executarà tot el programa() i retornarà el pertinent a la funció cridada
+ * Adjunta una petita funció autoexecutable d'inicialització
+ * @returns funcions accessibles
+ */
 
 //Funció que es crida a sí mateixa.
-// es pot fer servir per encapsular tot l'script
-let init = (function () {
+let init_programa_r0B = (function () {
     const seleccio = document.getElementById("seleccio");
+    const colors = document.getElementById("colors");
+    const color_central = document.getElementById("color_central");
+    const color_esq = document.getElementById("color_esq");
+    const color_text = document.getElementById("color_text");
     seleccio.hidden = true;
+    colors.hidden = true;
+    //TODO han de llegir el color actual
+    color_central.value ="#3EA4ED";
+    color_esq.value ="#348AC7";
+    color_text.value ="#FFFFFF";
+    //alert("inicialitzat!");
 })();
-
-//Peticions encapsulades
-var peticio01 = () => {
-
-    const peticio = new XMLHttpRequest();
-    const url = "http://api.geonames.org/findNearbyJSON?lat=41.3&lng=2.17&username=jsprovageo&lang=es";
-
-    peticio.open("GET", url, true);
-    peticio.send(null);
-    peticio.responseType = 'json';
-    peticio.onload = processarResposta;
-
-    function processarResposta() {
-        let resposta = peticio.response;
-        let nom = resposta.geonames[0].name;
-        console.log(nom);
-    }
-    //funcions accessibles des de fora de l'encapsulament
-    return {
-        interna: function () {
-            return alert("aquí tens la funció!")
-        },
-        segonafuncio: function () {
-            return alert("segona funció!");
-        },
-        tercerafuncio: function () {
-            return alert("tercera funció!");
-        }
-    }
-}
 
 var programa = function () {
     const API = encodeURI("https://servicios.ine.es/wstempus/js/ES/OPERACIONES_DISPONIBLES");
@@ -43,16 +27,17 @@ var programa = function () {
     peticio.open("GET", API, true);
     peticio.send(null);
     peticio.responseType = 'json';
-    peticio.onload = processarResposta;//espera a obtenir la resposta abans de desar-la
 
     function processarResposta() {
         let resposta = peticio.response;
         let item, opcio, index = 0;
 
-        if (!seleccio.hasChildNodes()) {
-            //omple la llista desplegable
-            // Comprova si la llista ja és plena abans
+        amagarDesplegables();
+        seleccio.hidden = false;
 
+        //omple la llista desplegable
+        // Comprova si la llista ja és plena abans
+        if (!seleccio.hasChildNodes()) {
             //crea el primer element de la llista
             opcio = document.createElement('option');
             opcio.value = 1;
@@ -67,21 +52,30 @@ var programa = function () {
                 opcio.innerHTML = item.Nombre;
                 seleccio.appendChild(opcio);
             };
-            alert("????")
-            seleccio.hidden = false;
         }
+    };
 
-    }
+    function amagarDesplegables() {
+        seleccio.hidden = true;
+        colors.hidden = true;
+
+    };
+
+    function triaColors(){
+
+        amagarDesplegables();
+        colors.hidden = false;
+    };
     //funcions accessibles des de fora de l'encapsulament
     return {
         interna: function () {
-            return alert("aquí tens la funció!")
+            return peticio.onload = processarResposta;//espera a obtenir la resposta abans de cridar
         },
         segonafuncio: function () {
-            return alert("segona funció!");
+            return peticio.onload = triaColors();//espera a obtenir la resposta abans de cridar
         },
         tercerafuncio: function () {
-            return alert("tercera funció!");
+            return amagarDesplegables();
         }
     }
 

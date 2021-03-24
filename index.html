@@ -9,17 +9,25 @@
 
 <body>
   <div id="esquerra" class="esquerra">
-    <ul id="barra_botons" >
+    <ul id="barra_botons">
       <li><button onclick="programa().interna()">Temáticas</button></li>
-      <li><button onclick="programa().segonafuncio()">prova2</button></li>
+      <li><button onclick="programa().segonafuncio()">Configuración</button></li>
       <li><button onclick="programa().tercerafuncio()">prova3</button></li>
     </ul>
-      
+
   </div>
   <div id="principal" class="principal">
     <h1 id="titol">Datos Gobierno de España</h1>
     <div id="desplegable">
       <select id="seleccio" name="desplegable"></select>
+    </div>
+    <div id="colors">
+      <label for="color_esq">Color Esquerre:</label>
+      <input type="color" id="color_esq" name="color_esq">
+      <label for="color_central">Color Central:</label>
+      <input type="color" id="color_central" name="color_central">
+      <label for="color_text">Color Text:</label>
+      <input type="color" id="color_text" name="color_text">
     </div>
   </div>
 </body>
