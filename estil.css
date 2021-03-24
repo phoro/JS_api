@@ -87,3 +87,23 @@ select {
     padding: 1em;
     text-align: center;
 }
+
+#color_text {
+    width: 10em;
+}
+
+.colors {
+    float: left;
+    margin-left: 1em;
+}
+
+input.colors {
+    width: 10em;
+    padding: 0;
+    border: none;
+}
+
+label.colors {
+    padding: .5em 1em;
+    font-size: .8em;
+}
