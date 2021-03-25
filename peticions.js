@@ -13,7 +13,10 @@ var programa = function () {
     const color_esq = document.getElementById("id_color_esq");
     const color_text = document.getElementById("id_color_text");
     const titol = document.getElementById("id_titol");
+    const sortida_std = document.getElementById("id_sortida_std");
 
+  
+    //Disposa variables i elements en modo de iniciació
     function inicialitzacio() {
         seleccio.hidden = true;
         colors.hidden = true;
@@ -31,15 +34,12 @@ var programa = function () {
     peticio.send(null);
     peticio.responseType = 'json';
 
-    function processarResposta() {
+   
+    function obteDades() {
         let resposta = peticio.response;
         let item, opcio, index = 0;
-
-        amagarDesplegables();
-        titol.innerHTML = "Datos públicos del Gobierno de España";
-
-        seleccio.hidden = false;
-        titol.hidden = false;
+        sortida_std.innerHTML="Obtenint dades...";
+        
 
         //omple la llista desplegable
         // Comprova si la llista ja és plena abans
@@ -59,14 +59,26 @@ var programa = function () {
                 seleccio.appendChild(opcio);
             };
         }
+        amagarDesplegables();
+        titol.innerHTML = "Datos públicos del Gobierno de España";
+        seleccio.hidden = false;
+        titol.hidden = false;
     };
 
+    function mostraInfo(){
+        sortida_std.innerHTML="Programa JavaScript v0.1"
+        amagarDesplegables();
+        sortida_std.hidden = false;
+    }
+    
     function amagarDesplegables() {
         seleccio.hidden = true;
         colors.hidden = true;
         titol.hidden = true;
+        sortida_std.hidden = true;
     };
 
+    
     function triaColors() {
         amagarDesplegables();
         titol.innerHTML = "Configuración";
@@ -76,7 +88,7 @@ var programa = function () {
     //funcions accessibles des de fora de l'encapsulament
     return {
         temes: function () {
-            return peticio.onload = processarResposta;//espera a obtenir la resposta abans de cridar
+            return peticio.onload = obteDades;//espera a obtenir la resposta abans de cridar
         },
         configura: function () {
             return peticio.onload = triaColors();//espera a obtenir la resposta abans de cridar
@@ -84,8 +96,11 @@ var programa = function () {
         inicia: function () {
             return inicialitzacio();
         },
-        quarta: function () {
+        neteja: function () {
             return amagarDesplegables();
+        },
+        info: function () {
+            return mostraInfo();
         }
     }
 }
