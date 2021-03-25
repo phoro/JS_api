@@ -12,13 +12,15 @@ let init_programa_r0B = (function () {
     const color_central = document.getElementById("color_central");
     const color_esq = document.getElementById("color_esq");
     const color_text = document.getElementById("color_text");
+    const titol = document.getElementById("titol");
     seleccio.hidden = true;
     colors.hidden = true;
+    titol.hidden = true;
     //TODO han de llegir el color actual
     color_central.value ="#3EA4ED";
     color_esq.value ="#348AC7";
     color_text.value ="#FFFFFF";
-    //alert("inicialitzat!");
+    
 })();
 
 var programa = function () {
@@ -33,7 +35,11 @@ var programa = function () {
         let item, opcio, index = 0;
 
         amagarDesplegables();
+        titol.innerHTML="Datos públicos del Gobierno de España";
+       
         seleccio.hidden = false;
+        titol.hidden = false;
+
 
         //omple la llista desplegable
         // Comprova si la llista ja és plena abans
@@ -58,12 +64,15 @@ var programa = function () {
     function amagarDesplegables() {
         seleccio.hidden = true;
         colors.hidden = true;
+        titol.hidden = true;
 
     };
 
     function triaColors(){
 
         amagarDesplegables();
+        titol.innerHTML="Configuración";
+        titol.hidden = false;
         colors.hidden = false;
     };
     //funcions accessibles des de fora de l'encapsulament

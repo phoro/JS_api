@@ -5,7 +5,7 @@ body {
 button {
     font-size: 15px;
     height: 2em;
-    border-radius: .5em;
+    border-radius: .1em;
     text-transform: uppercase;
     border: none;
     padding: .4em .6em;
@@ -13,7 +13,7 @@ button {
     text-decoration: none;
     background-color: #3493C7;
     color: white;
-    box-shadow: 0 .5em 0.5em 0 rgba(0, 0, 0, 0.2), 0 .5em 0.5em 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0.2em 0.2em 0 rgba(0, 0, 0, 0.1), 0.2em 0.2em 0 rgba(0, 0, 0, 0.1);
     transition-duration: 0.4s;
     float: left;
     margin: 0.3em;
@@ -28,11 +28,6 @@ button {
 button:hover {
     background-color: #9DC9E0;
     color: white;
-}
-
-img {
-    border-style: solid;
-    border-color: black;
 }
 
 select {
@@ -61,7 +56,8 @@ select {
     float: left;
     margin: .5em 0.3em;
     padding: 1em;
-    border-radius: 0.2em;
+    border-radius: 0.1em;
+   
 }
 
 .esquerra {
@@ -70,7 +66,7 @@ select {
     background-color: #348AC7;
     width: 20%;
     float: left;
-    border-radius: 0.2em;
+    border-radius: 0.1em;
 }
 
 #desplegable {
@@ -85,11 +81,8 @@ select {
 
 #colors {
     padding: 1em;
-    text-align: center;
-}
-
-#color_text {
-    width: 10em;
+    text-align: right;
+    float:center;
 }
 
 .colors {
@@ -101,9 +94,10 @@ input.colors {
     width: 10em;
     padding: 0;
     border: none;
+    
 }
 
 label.colors {
-    padding: .5em 1em;
     font-size: .8em;
+    float:none
 }
