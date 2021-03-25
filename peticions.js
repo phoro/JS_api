@@ -5,25 +5,28 @@
  * @returns funcions accessibles
  */
 
-//Funció que es crida a sí mateixa.
-var init_programa_r0B = (function () {
+
+
+
+var programa = function () {
     const seleccio = document.getElementById("id_seleccio");
     const colors = document.getElementById("id_colors");
     const color_central = document.getElementById("id_color_central");
     const color_esq = document.getElementById("id_color_esq");
     const color_text = document.getElementById("id_color_text");
     const titol = document.getElementById("id_titol");
-    seleccio.hidden = true;
-    colors.hidden = true;
-    titol.hidden = true;
-    //TODO han de llegir el color actual
-    color_central.value ="#3EA4ED";
-    color_esq.value ="#348AC7";
-    color_text.value ="#FFFFFF";
-    alert("inicialitzat!");
-})();
 
-var programa = function () {
+    function inicialitzacio() {
+        seleccio.hidden = true;
+        colors.hidden = true;
+        titol.hidden = true;
+        //TODO han de llegir el color actual
+        color_central.value = "#3EA4ED";
+        color_esq.value = "#348AC7";
+        color_text.value = "#FFFFFF";
+        alert("autofuncio executada");
+    };
+
     const API = encodeURI("https://servicios.ine.es/wstempus/js/ES/OPERACIONES_DISPONIBLES");
     const peticio = new XMLHttpRequest();
     peticio.open("GET", API, true);
@@ -35,8 +38,8 @@ var programa = function () {
         let item, opcio, index = 0;
 
         amagarDesplegables();
-        titol.innerHTML="Datos públicos del Gobierno de España";
-       
+        titol.innerHTML = "Datos públicos del Gobierno de España";
+
         seleccio.hidden = false;
         titol.hidden = false;
 
@@ -66,23 +69,30 @@ var programa = function () {
         titol.hidden = true;
     };
 
-    function triaColors(){
+    function triaColors() {
         amagarDesplegables();
-        titol.innerHTML="Configuración";
+        titol.innerHTML = "Configuración";
         titol.hidden = false;
         colors.hidden = false;
     };
     //funcions accessibles des de fora de l'encapsulament
     return {
-        interna: function () {
+        temes: function () {
             return peticio.onload = processarResposta;//espera a obtenir la resposta abans de cridar
         },
-        segonafuncio: function () {
+        configura: function () {
             return peticio.onload = triaColors();//espera a obtenir la resposta abans de cridar
         },
-        tercerafuncio: function () {
+        inicia: function () {
+            return inicialitzacio();
+        },
+        quarta: function () {
             return amagarDesplegables();
         }
     }
-
 }
+
+//Funció autoexecutable que es crida a sí mateixa.
+var init_programa_r0B = (function () {
+    programa().inicia();
+})();
