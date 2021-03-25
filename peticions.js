@@ -1,7 +1,7 @@
 /*
  * Programa encapsulat
  * Cada crida a una funció executarà tot el programa() i retornarà el pertinent a la funció cridada
- * Adjunta una petita funció autoexecutable d'inicialització
+ * Comença amb una petita funció autoexecutable d'inicialització
  * @returns funcions accessibles
  */
 
@@ -20,7 +20,6 @@ let init_programa_r0B = (function () {
     color_central.value ="#3EA4ED";
     color_esq.value ="#348AC7";
     color_text.value ="#FFFFFF";
-    
 })();
 
 var programa = function () {
@@ -39,7 +38,6 @@ var programa = function () {
        
         seleccio.hidden = false;
         titol.hidden = false;
-
 
         //omple la llista desplegable
         // Comprova si la llista ja és plena abans
@@ -65,7 +63,6 @@ var programa = function () {
         seleccio.hidden = true;
         colors.hidden = true;
         titol.hidden = true;
-
     };
 
     function triaColors(){
