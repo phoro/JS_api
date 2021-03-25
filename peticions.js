@@ -2,11 +2,9 @@
  * Programa encapsulat
  * Cada crida a una funció executarà tot el programa() i retornarà el pertinent a la funció cridada
  * Comença amb una petita funció autoexecutable d'inicialització
+ * @author r0B
  * @returns funcions accessibles
  */
-
-
-
 
 var programa = function () {
     const seleccio = document.getElementById("id_seleccio");
@@ -24,7 +22,7 @@ var programa = function () {
         color_central.value = "#3EA4ED";
         color_esq.value = "#348AC7";
         color_text.value = "#FFFFFF";
-        alert("autofuncio executada");
+        //alert("autofuncio executada");
     };
 
     const API = encodeURI("https://servicios.ine.es/wstempus/js/ES/OPERACIONES_DISPONIBLES");
