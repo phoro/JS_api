@@ -6,13 +6,13 @@
  */
 
 //Funció que es crida a sí mateixa.
-let init_programa_r0B = (function () {
-    const seleccio = document.getElementById("seleccio");
-    const colors = document.getElementById("colors");
-    const color_central = document.getElementById("color_central");
-    const color_esq = document.getElementById("color_esq");
-    const color_text = document.getElementById("color_text");
-    const titol = document.getElementById("titol");
+var init_programa_r0B = (function () {
+    const seleccio = document.getElementById("id_seleccio");
+    const colors = document.getElementById("id_colors");
+    const color_central = document.getElementById("id_color_central");
+    const color_esq = document.getElementById("id_color_esq");
+    const color_text = document.getElementById("id_color_text");
+    const titol = document.getElementById("id_titol");
     seleccio.hidden = true;
     colors.hidden = true;
     titol.hidden = true;
@@ -20,6 +20,7 @@ let init_programa_r0B = (function () {
     color_central.value ="#3EA4ED";
     color_esq.value ="#348AC7";
     color_text.value ="#FFFFFF";
+    alert("inicialitzat!");
 })();
 
 var programa = function () {
@@ -66,7 +67,6 @@ var programa = function () {
     };
 
     function triaColors(){
-
         amagarDesplegables();
         titol.innerHTML="Configuración";
         titol.hidden = false;

@@ -1,3 +1,53 @@
+.principal {
+    font-size: 15px;
+    background: #3EA4ED;
+    width: 50%;
+    color: white;
+    text-transform: uppercase;
+    float: left;
+    margin: .5em 0.3em;
+    padding: 1em;
+    border-radius: 0.1em;
+}
+
+.esquerra {
+    padding: 1em;
+    margin: .5em 0.3em;
+    background-color: #348AC7;
+    width: 20%;
+    float: left;
+    border-radius: 0.1em;
+}
+.capsalera {
+    color:white;
+    text-align: center;
+    text-transform: lowercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    padding: .3em;
+    margin: .5em 0.3em;
+    background-color: #348AC7;
+    width: 100%;
+    border-radius: 0.1em;
+}
+
+.colors {
+    float: left;
+    margin-left: 1em;
+}
+
+input.colors {
+    width: 10em;
+    padding: 0;
+    border: none;
+    
+}
+
+label.colors {
+    font-size: .8em;
+    float:none
+}
+
 body {
     background-color: black;
 }
@@ -17,12 +67,6 @@ button {
     transition-duration: 0.4s;
     float: left;
     margin: 0.3em;
-}
-
-#barra_botons {
-    align-content: left;
-    float: left;
-    list-style: none;
 }
 
 button:hover {
@@ -47,57 +91,24 @@ select {
     font-family: Arial;
 }
 
-.principal {
-    font-size: 15px;
-    background: #3EA4ED;
-    width: 50%;
-    color: white;
-    text-transform: uppercase;
-    float: left;
-    margin: .5em 0.3em;
-    padding: 1em;
-    border-radius: 0.1em;
-   
-}
-
-.esquerra {
-    padding: 1em;
-    margin: .5em 0.3em;
-    background-color: #348AC7;
-    width: 20%;
-    float: left;
-    border-radius: 0.1em;
-}
-
-#desplegable {
+#id_desplegable {
     clear: both;
     padding-top: 1em;
 }
 
-#titol {
+#id_titol {
     text-align: center;
     font-family: arial;
 }
 
-#colors {
+#id_colors {
     padding: 1em;
     text-align: right;
     float:center;
 }
 
-.colors {
+#id_barra_botons {
+    align-content: left;
     float: left;
-    margin-left: 1em;
-}
-
-input.colors {
-    width: 10em;
-    padding: 0;
-    border: none;
-    
-}
-
-label.colors {
-    font-size: .8em;
-    float:none
+    list-style: none;
 }
