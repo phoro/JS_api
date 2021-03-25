@@ -33,7 +33,7 @@ button:hover {
 select {
     font-size: 15px;
     height: 2em;
-    border-radius: .5em;
+    border-radius: .2em;
     text-transform: uppercase;
     border: none;
     padding: .4em .6em;
@@ -42,7 +42,7 @@ select {
     background-color: white;
     color: black;
     width: 70%;
-    box-shadow: 0 .3em 0.3em 0 rgba(0, 0, 0, 0.1), 0 .3em 0.3em 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0.2em 0.2em 0 rgba(0, 0, 0, 0.1), 0.2em 0.2em 0 rgba(0, 0, 0, 0.1);
     transition-duration: 0.4s;
     font-family: Arial;
 }
