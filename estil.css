@@ -1,40 +1,41 @@
 .principal {
     font-size: 15px;
     background: #348AC7;
-    width:68%;
+    width: 68%;
     color: white;
     text-transform: uppercase;
     float: left;
-    margin: .1em 0.1em;
     padding: 1em;
     border-radius: 0.1em;
+    margin-top: 0.5em;
+    margin-right: 0.5em;
 }
 
 .esquerra {
     padding: 1em;
-    margin: .1em 0.1em;
     background-color: #348AC7;
     width: 10%;
     float: left;
     border-radius: 0.1em;
-    
+    margin-top: 0.5em;
 }
+
 .dreta {
     padding: 1em;
-    margin: .1em 0.1em;
+    margin-top: 0.5em;
     background-color: #348AC7;
-    width: 15%;
+    width: 14.5%;
     float: left;
     border-radius: 0.1em;
 }
+
 .capsalera {
-    color:white;
+    color: white;
     text-align: center;
     text-transform: lowercase;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2em;
     padding: .3em;
-    margin: .1em 0.1em 0.1em 0.1em;
     background-color: #348AC7;
     width: 98%;
     border-radius: 0.1em;
@@ -42,19 +43,22 @@
 
 .colors {
     float: left;
-    margin-left: 1em;
+    display: inline-block;
 }
 
 input.colors {
-    width: 10em;
-    padding: 0;
-    border: none;
-    
+    display: inline-block;
+    width: 12em;
+    padding: 0.1em;
+    border: blanchedalmond;
+    margin-right: 1em;
 }
 
 label.colors {
+    display: inline-block;
     font-size: .8em;
-    float:none
+    width: 12em;
+    margin: 0em 0em 0em;
 }
 
 body {
@@ -63,7 +67,7 @@ body {
 
 button {
     font-size: 0.8em;
-    width:11em;
+    width: 11em;
     height: 2em;
     border-radius: .1em;
     text-transform: uppercase;
@@ -111,11 +115,15 @@ select {
 
 #id_colors {
     padding: 1em;
-    text-align: right;
-    float:center;
+    text-align: left;
+    float: center;
 }
-#titol_capsalera{
+
+#titol_capsalera {
     text-align: center;
     font-family: monospace;
 }
 
+#id_esquerra {
+    margin-right: 0.5em;
+}
